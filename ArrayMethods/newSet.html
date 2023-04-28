@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // 在 set 中，值是唯一的，不过其内部自动去重的机制采用的是严格的=== 全等，因此要想Set数据集合中的值是唯一的，则需要先将非字符串类型的值转成字符串
+    // Set 内置的方法有 ：add has delete clear size forEach     how to use ?  setDemo.size
+
+    // 创建一个空的 Set 对象
+    const setDemo = new Set()
+
+    // 通过数组初始化 Set 对象
+    const setDemo1 = new Set([1, 2, 3])
+
+
+    const qq = [1, 2, 3, 3, 5, 5, 6]
+
+    const result = [... new Set(qq)]   //将数据放入Set中，展开于数组中，
+    //    or    const result =Array.from(new Set(qq))
+
+
+    console.log(result, 'resultresultresultresult')
+    // 数组对象值完全一致去重  
+    let arr = [
+      { a: 1, b: 1 },
+      { a: 1, b: 1 },
+      { a: 3, b: 3 },
+      { a: 1, b: 1 },
+      { a: 5, b: 5 },
+      { a: 6, b: 6 },
+    ]
+
+
+
+
+    const uniqueSet = new Set(arr.map(JSON.stringify))
+    // or  const uniqueArr = [... new Set(arr)]
+    const uniqueArr = Array.from(uniqueSet).map(JSON.parse)
+
+    const tryna = new Set(arr)
+    console.log(tryna, 'trynatryna')
+    console.log(uniqueSet, 'uniqueSetuniqueSet')
+    console.log(uniqueArr, 'uniqueArr')
+
+    //首先使用 Array.prototype.map() 方法将数组中的每个对象转换为字符串，这里使用 JSON.stringify() 方法进行转换，    为什么先转为字符串 ？set 内部去重机制采用了严格的===，如果直接将对象放入 Set 中，则两个具有相同属性值的对象也会被视为不同的元素，因为它们在内存中的引用地址不同。
+    //然后将转换后的字符串放入 Set 中进行去重。
+    //最后再将去重后的字符串转换回对象，这里使用 Array.from() 方法将 Set 转换为数组，并使用 Array.prototype.map() 方法对数组中的每个字符串调用 JSON.parse() 方法进行转换。
+
+
+
+
+
+    const set = new Set([1, 2, 3])
+    set.forEach((i) => {
+      i = i + 1
+      console.log(i)
+    })
+
+
+
+    const set1 = new Set([1, 2, 3])
+    const set2 = new Set([2, 3, 4])
+    const intersection = new Set([...set1].filter(x => set2.has(x))) // Set { 2, 3 }
+    const union = new Set([...set1, ...set2]) // Set { 1, 2, 3, 4 }
+    const difference = new Set([...set1].filter(x => !set2.has(x))) // Set { 1 }
+
+
+
+
+  </script>
+</body>
+
+</html>

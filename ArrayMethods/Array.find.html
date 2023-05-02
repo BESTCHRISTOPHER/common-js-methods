@@ -9,9 +9,10 @@
 </head>
 
 <body>
-  <script>
 
-    //  默认对数组进行升序排序
+  <script>
+    // find 只能找到符合条件的第一个元素， 找到后就立马停止执行，返回当前数组。 
+    // 如果想筛选符合条件的多个选项，则使用filter
     const people = [
       {
         name: 'John',
@@ -45,11 +46,9 @@
       },
     ]
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
-    })
-    // console.log(result );
+
+    const result = people.find(item=>item.name==="John")
+
 
   </script>
 </body>

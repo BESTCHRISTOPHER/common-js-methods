@@ -41,7 +41,8 @@
 
 
 
-
+    //首先使用 Array.prototype.map() 方法将数组中的每个对象转换为字符串，这里使用 JSON.stringify() 方法进行转换，    
+    // 为什么先转为字符串 ？set 内部去重机制采用了严格的===，如果直接将对象放入 Set 中，则两个具有相同属性值的对象也会被视为不同的元素，因为它们在内存中的引用地址不同。
     const uniqueSet = new Set(arr.map(JSON.stringify))
     // or  const uniqueArr = [... new Set(arr)]
     const uniqueArr = Array.from(uniqueSet).map(JSON.parse)
@@ -51,9 +52,9 @@
     console.log(uniqueSet, 'uniqueSetuniqueSet')
     console.log(uniqueArr, 'uniqueArr')
 
-    //首先使用 Array.prototype.map() 方法将数组中的每个对象转换为字符串，这里使用 JSON.stringify() 方法进行转换，    为什么先转为字符串 ？set 内部去重机制采用了严格的===，如果直接将对象放入 Set 中，则两个具有相同属性值的对象也会被视为不同的元素，因为它们在内存中的引用地址不同。
     //然后将转换后的字符串放入 Set 中进行去重。
-    //最后再将去重后的字符串转换回对象，这里使用 Array.from() 方法将 Set 转换为数组，并使用 Array.prototype.map() 方法对数组中的每个字符串调用 JSON.parse() 方法进行转换。
+    //最后再将去重后的字符串转换回对象， 
+    //这里使用 Array.from() 方法将 Set 转换为数组，并使用 Array.prototype.map() 方法对数组中的每个字符串调用 JSON.parse() 方法进行转换。
 
 
 

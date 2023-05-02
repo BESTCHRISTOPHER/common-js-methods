@@ -9,9 +9,17 @@
 </head>
 
 <body>
+
+
+
   <script>
 
-    //  默认对数组进行升序排序
+    // 将一个或多个数组合并为一个数组  ，它返回一个新的数组，原数组不会被改变。
+
+    // const newArr = arr1.concat(arr2)   
+
+    // 浅拷贝  concat()
+
     const people = [
       {
         name: 'John',
@@ -44,12 +52,16 @@
         occupation: 'grocer',
       },
     ]
+    const arr = [{
+      name: '沙和尚',
+    }]
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
-    })
-    // console.log(result );
+    //  const newArr =  arr.concat(people)
+
+    const newArr = [...arr, ...people]
+
+
+    console.log(newArr, 'arr');
 
   </script>
 </body>

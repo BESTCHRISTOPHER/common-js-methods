@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    //  Object 将一个或者多个对象的属性复制到一个目标中,  可实现对象浅拷贝 
+    const obj = {
+      name: 'Alice',
+      age: 25,
+      city: 'New York',
+      hobbies: ['reading', 'traveling', 'hiking'],
+      job: {
+        title: 'Software Engineer',
+        company: 'Google',
+        salary: 100000,
+      },
+    }
+
+    const result = Object.assign({ gender: 'man' }, obj)
+
+
+    let targetObj = { a: 1, b: 2 }
+    let sourceObj = { c: 3, d: 4 }
+
+
+
+    targetObj={...targetObj,...sourceObj}   // 直接改变原对象，通过let重新赋值用展开运算符号将两个对象放到一个对象中
+
+    // Object.assign(targetObj,sourceObj)   //   直接改变源对象，将两个对象放到一个对象中  ，第一个参数目标对象，第二个参数是
+
+console.log(targetObj,'targetObj');
+
+    console.log(result, 'result')
+
+
+  </script>
+</body>
+
+</html>

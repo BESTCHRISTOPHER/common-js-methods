@@ -9,9 +9,12 @@
 </head>
 
 <body>
+
+
   <script>
 
-    //  默认对数组进行升序排序
+    // splice 用于删除元素，并在删除的位置插入元素（可选）， 会改变原数组，  返回删除的元素。 
+    //   第一个参数， 删除元素的索引（起始位置） ，  第二个参数 删除的个数， 第三个参数 插入的元素
     const people = [
       {
         name: 'John',
@@ -45,11 +48,31 @@
       },
     ]
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
-    })
-    // console.log(result );
+
+    const ItemIndexDeleted = people.findIndex((item, index) =>
+      item.name === 'Jane'
+    )
+
+
+    const boastInsertItem = () => {
+      return {
+        name: '白骨精',
+        age: '19',
+        gender: 'man',
+        occupation: 'worker'
+      }
+    }
+
+
+
+    const result = people.splice(ItemIndexDeleted, 0, boastInsertItem())
+
+
+    console.log(result, 'result')
+    console.log(people, 'people')
+
+
+
 
   </script>
 </body>

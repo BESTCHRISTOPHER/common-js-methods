@@ -9,9 +9,9 @@
 </head>
 
 <body>
-  <script>
 
-    //  默认对数组进行升序排序
+  <script>
+    // Array.includes 方法检查数组中是否包含某个值，返回boolean    ,   通常用于检查一个简单的值
     const people = [
       {
         name: 'John',
@@ -45,11 +45,11 @@
       },
     ]
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
-    })
-    // console.log(result );
+    const arr = [1, 2, 3, 4, 5]
+
+    const result = arr.includes(2)
+
+
 
   </script>
 </body>

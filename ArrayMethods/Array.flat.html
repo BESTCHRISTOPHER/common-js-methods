@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+//在调用 Array.flat() 方法时，可以传递一个可选的整数参数，该参数表示要递归展开的嵌套数组的深度。如果未指定深度参数，则默认为 1，即仅展开一层嵌套数组。
+// Infinity 则表示展开的深度为最深
+//在上一个示例中，我们将深度参数设置为 2，这意味着在递归展开嵌套数组时，只展开到嵌套数组的深度为 2 的子数组。也就是说，如果嵌套数组的深度大于 2，则它将保持嵌套状态。
+
+
+
+const multiDimArr = [1, [2, [3, [4]]], 5];
+
+
+    const result = multiDimArr.flat(Infinity)
+
+console.log(result,'result')
+  </script>
+</body>
+
+</html>

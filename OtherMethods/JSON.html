@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    //JSON.stringify() 方法将 JavaScript 对象或数组转换为 JSON 格式的字符串，这个字符串和普通的字符串有以下几个区别：
+
+    // JSON 字符串的格式必须符合 JSON 标准。这意味着，字符串必须用双引号引起来，而不是单引号，属性名也必须用双引号引起来。
+
+    // JSON 字符串中可以包含 JavaScript 对象或数组等复杂数据类型，而普通字符串只能包含文本。
+
+    // JSON 字符串中可以包含空值、布尔值、数值、字符串、对象、数组等数据类型，而普通字符串只能包含文本。
+
+    // JSON 字符串可以被解析成 JavaScript 对象或数组，而普通字符串不能被直接转换成 JavaScript 对象或数组。
+
+    // 因此，JSON.stringify() 转换的字符串数据和普通的字符串数据是有区别的。如果要在 JavaScript 中处理 JSON 数据，
+    // 需要将 JSON 字符串转换为 JavaScript 对象或数组，这时候可以使用 JSON.parse() 方法进行解析。如果要将 JSON 数据传输到其他应用程序中，
+    // 则需要将其转换为 JSON 字符串，这时候可以使用 JSON.stringify() 方法进行转换。  
+
+
+
+    const people = [
+      {
+        name: 'John',
+        age: 25,
+        gender: 'male',
+        occupation: 'developer',
+      },
+      {
+        name: 'Jane',
+        age: 30,
+        gender: 'female',
+        occupation: 'designer',
+      },
+      {
+        name: 'Tom',
+        age: 40,
+        gender: 'male',
+        occupation: 'manager',
+      },
+      {
+        name: 'Lucy',
+        age: 28,
+        gender: 'female',
+        occupation: 'sales',
+      },
+      {
+        name: 'Eric',
+        age: 28,
+        gender: 'female',
+        occupation: 'grocer',
+      },
+    ]
+
+    const result = JSON.stringify(people)
+    const finalResult = JSON.parse(result, 'result')
+    // console.log(result, 'result')
+
+    console.log(result, 'JSON 字符串')
+    console.log(finalResult, '将JSON字符串转成js对象')
+    console.log(people, '原始数据')
+  </script>
+</body>
+
+</html>

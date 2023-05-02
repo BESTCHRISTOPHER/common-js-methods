@@ -9,9 +9,22 @@
 </head>
 
 <body>
+
+
+
+
   <script>
 
-    //  默认对数组进行升序排序
+    // slice     截取数据，  第一个参数是截取的起始位置， 第二个参数是截取的结束位置 ， 参数二不写则默认截取到最后， 不写参数则对数组进行浅拷贝 。
+
+
+    // slice不会改变原数组 。 
+
+
+    //浅拷贝的数据在接下来的操作中会改变引用数据类型，数组 对象 function ，  而不会改变基本数据类型， string，num，boolen，bigInt... 
+
+
+    // slice   只写一个参数 -1   直接取到数组的最后一个元素 。 
     const people = [
       {
         name: 'John',
@@ -45,11 +58,15 @@
       },
     ]
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
-    })
-    // console.log(result );
+
+    const result = people.slice(0, people.length - 1)
+
+
+
+
+    console.log(result, 'result');
+
+
 
   </script>
 </body>

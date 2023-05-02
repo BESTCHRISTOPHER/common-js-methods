@@ -10,8 +10,10 @@
 
 <body>
   <script>
+    // indexOf   返回数组中第一个找到的指定元素的索引位置。
+    // 不推荐，推荐使用findIndex
 
-    //  默认对数组进行升序排序
+
     const people = [
       {
         name: 'John',
@@ -45,12 +47,10 @@
       },
     ]
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
-    })
-    // console.log(result );
+    const result = people.indexOf(item => { return item.name === 'Tom' })
 
+    console.log(result, 'result')
+    console.log(people, 'people')
   </script>
 </body>
 

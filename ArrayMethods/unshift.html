@@ -9,9 +9,11 @@
 </head>
 
 <body>
+
   <script>
 
-    //  默认对数组进行升序排序
+    //  将一个或者多个元素添加到数组的开头，并且返回新的数组的长度， 它会直接修改原数组
+
     const people = [
       {
         name: 'John',
@@ -45,13 +47,17 @@
       },
     ]
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
-    })
-    // console.log(result );
 
+    const insertArr = [1, 2, 3, 4, 5, 6, 7]
+
+    // const result = people.unshift(insertArr)
+
+    const result = [...people, insertArr]  // ... would not change the init Arr 
+    console.log(people, 'people')
+
+    console.log(result, 'result')
   </script>
+
 </body>
 
 </html>

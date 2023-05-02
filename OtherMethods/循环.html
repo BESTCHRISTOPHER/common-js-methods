@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <script>
+    // for in 遍历对象返回的对象的key值,遍历数组返回的数组的下标(key)
+
+    //for of 遍历
+
+    // forEach 遍历数组，执行一个指定函数
+
+
+
+    //  怎样看一个数组有没有实现 Symbol.iterator方法 ？ 
+    //可以通过检查数组对象的原型链上是否有 Symbol.iterator 方法来确定一个数组是否实现了迭代器接口。具体来说，可以使用 Object.getPrototypeOf() 方法获取数组对象的原型，然后检查原型上是否存在 Symbol.iterator 方法。
+
+    //以下是一个示例代码：
+
+
+    //const arr = [1, 2, 3];
+    //const proto = Object.getPrototypeOf(arr);
+    //const hasIterator = proto.hasOwnProperty(Symbol.iterator);
+
+    //console.log(hasIterator); // true
+    //在这个示例中，我们首先定义了一个数组 arr，然后使用 Object.getPrototypeOf() 方法获取该数组对象的原型。接着，我们使用 hasOwnProperty() 方法检查原型对象上是否存在 Symbol.iterator 方法，并将结果赋值给变量 hasIterator。最后，我们输出 hasIterator 的值，如果为 true，则说明该数组实现了迭代器接口，可以使用 for-of 循环遍历。
+
+    //需要注意的是，虽然数组是 JavaScript 内置的可迭代对象，但是在实现自定义的迭代器对象时，通常也需要实现 Symbol.iterator 方法。在这种情况下，我们可以使用与上面相似的方法来检查对象是否实现了迭代器接口。
+
+
+    const arr = [1, 2, 3]
+    const obj = { a: 1, b: 2, c: 3 }
+
+    const proto = Object.getPrototypeOf(arr)
+
+
+    console.log(proto, 'proto')
+
+    console.log(obj.b, 'fagaerg')
+
+    for (const item of arr) {
+      console.log(item)
+    }
+    // Output: 1 2 3
+
+
+
+
+    for (const key in obj) {
+      console.log(key + ': ' + obj[key])
+    }
+// Output: a: 1 b: 2 c: 3
+
+  </script>
+</body>
+
+</html>

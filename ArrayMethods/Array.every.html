@@ -9,9 +9,9 @@
 </head>
 
 <body>
-  <script>
 
-    //  默认对数组进行升序排序
+  <script>
+    // every 方法用来检查数组中是否所有元素都符合条件，返回boolean
     const people = [
       {
         name: 'John',
@@ -45,11 +45,9 @@
       },
     ]
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
-    })
-    // console.log(result );
+
+    const result = people.every(item=>item.name==="John")  // output false
+
 
   </script>
 </body>

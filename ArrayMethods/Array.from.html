@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+
+    const arrLikeObj = { 0: 'a', 1: 'b', 2: 'c', length: 3 }
+    const arr = Array.from(arrLikeObj)
+    console.log(arr) // ['a', 'b', 'c']  
+
+
+    const fakeData = Array.from({ length: 200 }, (_, i) => {
+      return {
+        id: i,
+        name: '猪八戒',
+      }
+    })
+
+    console.log(fakeData, 'fakeData')
+
+  </script>
+</body>
+
+</html>

@@ -9,9 +9,9 @@
 </head>
 
 <body>
-  <script>
 
-    //  默认对数组进行升序排序
+  <script>
+    // filter 返回一个新的数组
     const people = [
       {
         name: 'John',
@@ -45,11 +45,16 @@
       },
     ]
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
+
+    const result = people.filter((item, i) => {
+      return item.age !== 28
     })
-    // console.log(result );
+
+    // 如何过滤出数组中age === 28的元素 ？   arr.filter((item,i)=>{return item.age === 28})
+    //  过滤出数组中age不等于28的元素， arr,filter((item,i)=>{return item.age !==28})                                    
+
+    console.log(people, 'people')
+    console.log(result, 'result')
 
   </script>
 </body>

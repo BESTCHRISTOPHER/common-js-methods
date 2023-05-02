@@ -9,9 +9,9 @@
 </head>
 
 <body>
-  <script>
 
-    //  默认对数组进行升序排序
+  <script>
+    // Array.reduce 检查数组中是否至少有一个元素满足条件，返回布尔值。
     const people = [
       {
         name: 'John',
@@ -45,11 +45,15 @@
       },
     ]
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
-    })
-    // console.log(result );
+
+    const result = people.some(item => item.name === 'Erogn')
+
+
+    if (result) {
+      console.log('满足条件执行的程序')
+    } else {
+      console.log('不满足条件执行的语句')
+    }
 
   </script>
 </body>

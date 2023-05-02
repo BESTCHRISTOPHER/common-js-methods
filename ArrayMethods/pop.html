@@ -9,9 +9,10 @@
 </head>
 
 <body>
-  <script>
 
-    //  默认对数组进行升序排序
+  
+  <script>
+     //  pop used to delete the last element ,and return it 
     const people = [
       {
         name: 'John',
@@ -44,12 +45,20 @@
         occupation: 'grocer',
       },
     ]
+ 
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
-    })
-    // console.log(result );
+    const newOne = structuredClone(people)   // deepClone 
+
+    const result = newOne.pop()
+    console.log(newOne, 'newOne')
+
+    // const result =people.pop()
+
+
+    console.log(result, 'sdafnisanv')
+    console.log(people, 'people')
+
+
 
   </script>
 </body>

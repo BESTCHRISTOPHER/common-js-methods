@@ -9,9 +9,9 @@
 </head>
 
 <body>
-  <script>
 
-    //  默认对数组进行升序排序
+  <script>
+    // find 找到符合条件的第一个元素的索引，找到后就立即停止执行
     const people = [
       {
         name: 'John',
@@ -45,11 +45,9 @@
       },
     ]
 
-    const result = people.sort((a, b) => {
-      console.log(a, 'a')
-      console.log(b, 'b')
-    })
-    // console.log(result );
+
+    const result = people.findIndex(item=>item.name==="John")
+
 
   </script>
 </body>
